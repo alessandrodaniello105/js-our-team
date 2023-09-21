@@ -49,6 +49,8 @@ const team = [
 
 ];
 
+const ul = document.querySelector('ul');
+
 
 // 2. Creo un ciclo per avere i valori di nome, ruolo e stringa della foto
 console.log('----------CICLO GLI OGGETTI----------');
@@ -80,9 +82,9 @@ for (let membro of team) {
   let cardBody = document.createElement('div')
   cardBody.className = "card-body";
   cardBody.innerHTML = `
-  <h5 class="card-title">Card title</h5>
+  <h5 class="card-title">${membro.namelastname}</h5>
 
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <p class="card-text">${membro.role}</p>
   `;
 
   membroCard.append(cardBody);
@@ -98,10 +100,13 @@ for (let membro of team) {
 
     textBox.innerHTML +=  `${key}: ${membro[key]}, `;
 
+    
   };
+  // ul.innerHTML +=  `<li>${membro.namelastname}, ${membro.role}, ${membro.imgstring}</li>`;
 
   textBox.innerHTML += "<br>";
 
+  
 };
 
 
