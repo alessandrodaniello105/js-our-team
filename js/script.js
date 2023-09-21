@@ -103,11 +103,11 @@ for (let membro of team) {
 
     console.log(key, " - ", membro[key])
 
-    textBox.innerHTML +=  `${key}: ${membro[key]}, `;
+    // textBox.innerHTML +=  `${key}: ${membro[key]}, `;
 
   };
 
-  textBox.innerHTML += "<br>";
+  // textBox.innerHTML += "<br>";
 
   
 };
