@@ -1,3 +1,6 @@
+// 4. Definisco il contenitore del DOM
+const textBox = document.querySelector('.text-box');
+
 // 1. Creo l'array con gli oggetti e le informazioni
 const team = [
 
@@ -45,20 +48,25 @@ const team = [
 
 ];
 
-// console.log(team[2].role);
 
+// 2. Creo un ciclo per avere i valori di nome, ruolo e stringa della foto
 console.log('----------CICLO GLI OGGETTI----------');
-
 for (let membro of team) {
   
   console.log('---OGGETTO---');
   console.log(membro);
 
+  // 3. Stampo in console i valori presi dal ciclo
   console.log('---CICLO I VALORI DELLE CHIAVI---');
+
   for (let key in membro) {
     console.log(key, " - ", membro[key])
+
+    textBox.innerHTML +=  `${key}: ${membro[key]}`;
   }
-
-
+  textBox.innerHTML += `<br>`
 }
 
+
+// 5. Stampo nel DOM i valori
+// textBox.innerHTML = ``
