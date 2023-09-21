@@ -1,5 +1,6 @@
 // 4. Definisco il contenitore del DOM
 const textBox = document.querySelector('.text-box');
+const cardContainer = document.querySelector('.row');
 
 // 1. Creo l'array con gli oggetti e le informazioni
 const team = [
@@ -56,17 +57,54 @@ for (let membro of team) {
   console.log('---OGGETTO---');
   console.log(membro);
 
+  // CREO LA CARD
+  let membroCol = document.createElement('div');
+  membroCol.className = 'col';
+  membroCol.style.width = "18rem"
+
+  cardContainer.append(membroCol);
+  
+  let membroCard = document.createElement('div');
+  membroCard.className = 'card';
+  membroCard.classList.add('img-fluid', 'text-center', 'my-3');
+  membroCard.style.width = "18rem"
+
+  membroCol.append(membroCard);
+
+  let img = document.createElement('img');
+  img.src = `./img/${membro.imgstring}`;
+  img.classList.add('card-img-top')
+  console.log(img.src);
+  membroCard.append(img);
+
+  let cardBody = document.createElement('div')
+  cardBody.className = "card-body";
+  cardBody.innerHTML = `
+  <h5 class="card-title">Card title</h5>
+
+  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  `;
+
+  membroCard.append(cardBody);
+
+
+
   // 3. Stampo in console i valori presi dal ciclo
   console.log('---CICLO I VALORI DELLE CHIAVI---');
 
   for (let key in membro) {
+
     console.log(key, " - ", membro[key])
 
-    textBox.innerHTML +=  `${key}: ${membro[key]}`;
-  }
-  textBox.innerHTML += `<br>`
-}
+    textBox.innerHTML +=  `${key}: ${membro[key]}, `;
+
+  };
+
+  textBox.innerHTML += "<br>";
+
+};
 
 
 // 5. Stampo nel DOM i valori
 // textBox.innerHTML = ``
+
