@@ -59,26 +59,30 @@ for (let membro of team) {
   console.log('---OGGETTO---');
   console.log(membro);
 
-  // CREO LA CARD
+  // CREO LA COLONNA PER LA CARD
   let membroCol = document.createElement('div');
   membroCol.className = 'col';
-  membroCol.style.width = "18rem"
-
+  membroCol.style.width = "18rem";
+  
   cardContainer.append(membroCol);
   
+  
+  // CREO LA CARD
   let membroCard = document.createElement('div');
   membroCard.className = 'card';
   membroCard.classList.add('img-fluid', 'text-center', 'my-3');
-  membroCard.style.width = "18rem"
-
+  membroCard.style.width = "18rem";
+  
   membroCol.append(membroCard);
-
+  
+  // CREO L'IMG NELLA CARD
   let img = document.createElement('img');
   img.src = `./img/${membro.imgstring}`;
-  img.classList.add('card-img-top')
+  img.classList.add('card-img-top');
   console.log(img.src);
   membroCard.append(img);
-
+  
+  // CREO IL BODY DELLA CARD
   let cardBody = document.createElement('div')
   cardBody.className = "card-body";
   cardBody.innerHTML = `
@@ -94,15 +98,14 @@ for (let membro of team) {
   // 3. Stampo in console i valori presi dal ciclo
   console.log('---CICLO I VALORI DELLE CHIAVI---');
 
+
   for (let key in membro) {
 
     console.log(key, " - ", membro[key])
 
     textBox.innerHTML +=  `${key}: ${membro[key]}, `;
 
-    
   };
-  // ul.innerHTML +=  `<li>${membro.namelastname}, ${membro.role}, ${membro.imgstring}</li>`;
 
   textBox.innerHTML += "<br>";
 
