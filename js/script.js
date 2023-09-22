@@ -54,7 +54,7 @@ const ul = document.querySelector('ul');
 
 // 2. Creo un ciclo per avere i valori di nome, ruolo e stringa della foto
 console.log('----------CICLO GLI OGGETTI----------');
-for (let membro of team) {
+team.forEach (membro  =>  {
   
   console.log('---OGGETTO---');
   console.log(membro);
@@ -110,7 +110,7 @@ for (let membro of team) {
   // textBox.innerHTML += "<br>";
 
   
-};
+});
 
 
 // 5. Stampo nel DOM i valori
